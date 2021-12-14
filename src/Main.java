@@ -1,11 +1,14 @@
-import products.Footballs;
-import products.Products;
+import products.*;
 
 import java.util.Scanner;
 
 public class Main {
     Scanner scanner = new Scanner(System.in);
-    Products[] products = new Products[5];
+    Footballs[] fbls = new Footballs[5];
+    Footwear[] ftwr = new Footwear[5];
+    Tops[] tops = new Tops[5];
+    Shorts[] shorts = new Shorts[5];
+    Gifts[] gifts = new Gifts[5];
 
 
     public static void main(String[] args) {
@@ -58,6 +61,37 @@ public class Main {
                 System.out.println("--------");
                 menu();
         }
+    }
+
+    private void initFootballs(){
+        fbls[0] = new Footballs(1, "Mitre", "Manchester United", 15.99, 3);
+        fbls[1] = new Footballs(2, "Nike", "Newcastle United", 19.99, 2);
+        fbls[2] = new Footballs(3, "Addidas", "Liverpool", 18.99, 5);
+        fbls[3] = new Footballs(4, "Mitre", "Chelsea", 12.99, 9);
+    }
+    private void initFootwear(){
+        ftwr[0] = new Footwear(5, "New Balance", "OneWave", 39.99, 7);
+        ftwr[1] = new Footwear(6, "Nike", "Hypervenoms", 35.99, 11);
+        ftwr[2] = new Footwear(7, "Addidas", "Quickstrike", 45.99, 6);
+        ftwr[3] = new Footwear(8, "Puma", "Pele Edition", 62.99, 13);
+    }
+    private void initShorts(){
+        shorts[0] = new Shorts(9, "Nike", "Chelsea", 19.99, 7);
+        shorts[1] = new Shorts(10, "Puma", "Juventus", 18.99, 11);
+        shorts[2] = new Shorts(11, "New Balance", "Liverpool", 24.99, 6);
+        shorts[3] = new Shorts(12, "Addidas", "Manchester United", 24.99, 13);
+    }
+    private void initTops(){
+        tops[0] = new Tops(13, "Nike", "Chelsea", true, 45.99, 7);
+        tops[1] = new Tops(14, "Puma", "Juventus", false, 42.99, 11);
+        tops[2] = new Tops(15, "New Balance", "Liverpool", false, 49.99, 6);
+        tops[3] = new Tops(16, "Addidas", "Manchester United", true,49.99, 13);
+    }
+    private void initGifts(){
+        gifts[0] = new Gifts(17, "Sports Direct", "Chelsea", "Calendar", 9.99, 7);
+        gifts[1] = new Gifts(18, "Sports Direct", "Juventus", "Flask", 4.99, 11);
+        gifts[2] = new Gifts(19, "Sports Direct", "Liverpool", "Socks",9.99, 6);
+        gifts[3] = new Gifts(20, "Sports Direct", "Manchester United", "Calendar", 9.99, 13);
     }
 
 }
