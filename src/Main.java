@@ -13,6 +13,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+
         Main main = new Main();
         System.out.println("----------");
         System.out.println("Welcome to ProDirectSoccer!");
@@ -85,7 +86,7 @@ public class Main {
         System.out.println("5 - Gifts");
         System.out.println("6 - Exit to Main Menu.");
         byte choice = Byte.parseByte(scanner.nextLine());
-        switch(choice) {
+        switch (choice) {
             case 1:
                 createFootballs();
                 break;
@@ -113,7 +114,7 @@ public class Main {
 
     private void deleteStockMenu() {
         System.out.println("----------");
-        System.out.println("Please select the type of stock you wish to delete.");
+        System.out.println("Please select the type of stock you wish to remove.");
         System.out.println("1 - Footballs");
         System.out.println("2 - Footwear");
         System.out.println("3 - Sports Tops");
@@ -121,21 +122,21 @@ public class Main {
         System.out.println("5 - Gifts");
         System.out.println("6 - Exit to Main Menu.");
         byte choice = Byte.parseByte(scanner.nextLine());
-        switch(choice){
+        switch (choice) {
             case 1:
-                createFootballs();
+                deleteFootballs();
                 break;
             case 2:
-                createFootwear();
+                deleteFootwear();
                 break;
             case 3:
-                createTops();
+                deleteTops();
                 break;
             case 4:
-                createShorts();
+                deleteShorts();
                 break;
             case 5:
-                createGifts();
+                deleteGifts();
                 break;
             case 6:
                 adminMenu();
@@ -146,6 +147,7 @@ public class Main {
                 createStockMenu();
         }
     }
+
 
     private void viewStockMenu() {
         System.out.println("Please choose one of the options below to view our current stock");
@@ -159,38 +161,38 @@ public class Main {
         byte choice = Byte.parseByte(scanner.nextLine());
         System.out.println("----------");
 
-        switch(choice) {
+        switch (choice) {
             case 1:
                 System.out.println("Please see the following footballs");
-                for(int i = 0; i < fbls.size(); i++) {
+                for (int i = 0; i < fbls.size(); i++) {
                     fbls.get(i).footballDesc();
                 }
                 viewStockMenu();
                 break;
             case 2:
                 System.out.println("Please see the following footwear");
-                for(int i = 0; i < ftwr.size(); i++) {
+                for (int i = 0; i < ftwr.size(); i++) {
                     ftwr.get(i).footwearDesc();
                 }
                 viewStockMenu();
                 break;
             case 3:
                 System.out.println("Please see the following sports tops");
-                for(int i = 0; i < tops.size(); i++) {
+                for (int i = 0; i < tops.size(); i++) {
                     tops.get(i).topsDesc();
                 }
                 viewStockMenu();
                 break;
             case 4:
                 System.out.println("Please see the following sports shorts");
-                for(int i = 0; i < shorts.size(); i++) {
+                for (int i = 0; i < shorts.size(); i++) {
                     shorts.get(i).shortsDesc();
                 }
                 viewStockMenu();
                 break;
             case 5:
                 System.out.println("Please see the following gifts");
-                for(int i = 0; i < gifts.size(); i++) {
+                for (int i = 0; i < gifts.size(); i++) {
                     gifts.get(i).giftDesc();
                 }
                 viewStockMenu();
@@ -211,25 +213,25 @@ public class Main {
         fbls.add(new Footballs(3, "Addidas", "Liverpool", 18.99, 5));
         fbls.add(new Footballs(4, "Mitre", "Chelsea", 12.99, 9));
 
-        ftwr.add(new Footwear(5, "New Balance", "OneWave", 39.99, 7));
-        ftwr.add(new Footwear(6, "Nike", "Hypervenoms", 35.99, 11));
-        ftwr.add(new Footwear(7, "Addidas", "Quickstrike", 45.99, 6));
-        ftwr.add(new Footwear(8, "Puma", "Pele Edition", 62.99, 13));
+        ftwr.add(new Footwear(1, "New Balance", "OneWave", 39.99, 7));
+        ftwr.add(new Footwear(2, "Nike", "Hypervenoms", 35.99, 11));
+        ftwr.add(new Footwear(3, "Addidas", "Quickstrike", 45.99, 6));
+        ftwr.add(new Footwear(4, "Puma", "Pele Edition", 62.99, 13));
 
-        shorts.add(new Shorts(9, "Nike", "Chelsea", 19.99, 7));
-        shorts.add(new Shorts(10, "Puma", "Juventus", 18.99, 11));
-        shorts.add(new Shorts(11, "New Balance", "Liverpool", 24.99, 6));
-        shorts.add(new Shorts(12, "Addidas", "Manchester United", 24.99, 13));
+        shorts.add(new Shorts(1, "Nike", "Chelsea", 19.99, 7));
+        shorts.add(new Shorts(2, "Puma", "Juventus", 18.99, 11));
+        shorts.add(new Shorts(3, "New Balance", "Liverpool", 24.99, 6));
+        shorts.add(new Shorts(4, "Addidas", "Manchester United", 24.99, 13));
 
-        tops.add(new Tops(13, "Nike", "Chelsea", true, 45.99, 7));
-        tops.add(new Tops(14, "Puma", "Juventus", false, 42.99, 11));
-        tops.add(new Tops(15, "New Balance", "Liverpool", false, 49.99, 6));
-        tops.add(new Tops(16, "Addidas", "Manchester United", true, 49.99, 13));
+        tops.add(new Tops(1, "Nike", "Chelsea", true, 45.99, 7));
+        tops.add(new Tops(2, "Puma", "Juventus", false, 42.99, 11));
+        tops.add(new Tops(3, "New Balance", "Liverpool", false, 49.99, 6));
+        tops.add(new Tops(4, "Addidas", "Manchester United", true, 49.99, 13));
 
-        gifts.add(new Gifts(17, "Sports Direct", "Chelsea", "Calendar", 9.99, 7));
-        gifts.add(new Gifts(18, "Sports Direct", "Juventus", "Flask", 4.99, 11));
-        gifts.add(new Gifts(19, "Sports Direct", "Liverpool", "Socks", 9.99, 6));
-        gifts.add(new Gifts(20, "Sports Direct", "Manchester United", "Calendar", 9.99, 13));
+        gifts.add(new Gifts(1, "Sports Direct", "Chelsea", "Calendar", 9.99, 7));
+        gifts.add(new Gifts(2, "Sports Direct", "Juventus", "Flask", 4.99, 11));
+        gifts.add(new Gifts(3, "Sports Direct", "Liverpool", "Socks", 9.99, 6));
+        gifts.add(new Gifts(4, "Sports Direct", "Manchester United", "Calendar", 9.99, 13));
     }
 
     private void createFootballs() {
@@ -254,6 +256,7 @@ public class Main {
         adminMenu();
 
     }
+
     private void createFootwear() {
         System.out.println("-------");
         System.out.println("What is the product number for the footwear?");
@@ -276,6 +279,7 @@ public class Main {
         adminMenu();
 
     }
+
     private void createShorts() {
         System.out.println("-------");
         System.out.println("What is the product number for the shorts?");
@@ -299,6 +303,7 @@ public class Main {
         adminMenu();
 
     }
+
     private void createTops() {
         System.out.println("-------");
         System.out.println("What is the product number for the tops?");
@@ -323,6 +328,7 @@ public class Main {
         adminMenu();
 
     }
+
     private void createGifts() {
         System.out.println("-------");
         System.out.println("What is the product number for the gifts?");
@@ -347,4 +353,86 @@ public class Main {
         adminMenu();
 
     }
+
+    private void deleteFootballs(){
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to remove.");
+        int deleteChoice = Integer.parseInt(scanner.nextLine());
+        fbls.get(deleteChoice-1).footballDesc();
+        System.out.println("Please confirm that you wish to delete this item: (y/n)");
+        boolean delete = scanner.nextLine().equalsIgnoreCase("y");
+        if (delete){
+            fbls.remove(deleteChoice-1);
+            System.out.println("Item Deleted");
+            adminMenu();
+        }
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        deleteFootballs();
+    }
+    private void deleteFootwear(){
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to remove.");
+        int deleteChoice = Integer.parseInt(scanner.nextLine());
+        ftwr.get(deleteChoice-1).footwearDesc();
+        System.out.println("Please confirm that you wish to delete this item: (y/n)");
+        boolean delete = scanner.nextLine().equalsIgnoreCase("y");
+        if (delete){
+            ftwr.remove(deleteChoice-1);
+            System.out.println("Item Deleted");
+            adminMenu();
+        }
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        deleteFootwear();
+    }
+    private void deleteShorts(){
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to remove.");
+        int deleteChoice = Integer.parseInt(scanner.nextLine());
+        shorts.get(deleteChoice-1).shortsDesc();
+        System.out.println("Please confirm that you wish to delete this item: (y/n)");
+        boolean delete = scanner.nextLine().equalsIgnoreCase("y");
+        if (delete){
+            shorts.remove(deleteChoice-1);
+            System.out.println("Item Deleted");
+            adminMenu();
+        }
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        deleteShorts();
+    }
+    private void deleteTops(){
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to remove.");
+        int deleteChoice = Integer.parseInt(scanner.nextLine());
+        tops.get(deleteChoice-1).topsDesc();
+        System.out.println("Please confirm that you wish to delete this item: (y/n)");
+        boolean delete = scanner.nextLine().equalsIgnoreCase("y");
+        if (delete){
+            tops.remove(deleteChoice-1);
+            System.out.println("Item Deleted");
+            adminMenu();
+        }
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        deleteTops();
+    }
+    private void deleteGifts(){
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to remove.");
+        int deleteChoice = Integer.parseInt(scanner.nextLine());
+        gifts.get(deleteChoice-1).giftDesc();
+        System.out.println("Please confirm that you wish to delete this item: (y/n)");
+        boolean delete = scanner.nextLine().equalsIgnoreCase("y");
+        if (delete){
+            gifts.remove(deleteChoice-1);
+            System.out.println("Item Deleted");
+            adminMenu();
+        }
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        deleteGifts();
+    }
+
 }
