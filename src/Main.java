@@ -1,7 +1,6 @@
 import products.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -30,7 +29,7 @@ public class Main {
         System.out.println("2 - Alter Stock");
         System.out.println("3 - Exit");
         System.out.println("--------");
-        Byte choice = Byte.parseByte(scanner.nextLine());
+        byte choice = Byte.parseByte(scanner.nextLine());
         switch (choice) {
             case 1:
                 viewStockMenu();
@@ -54,7 +53,7 @@ public class Main {
         System.out.println("3 - Edit Existing Stock");
         System.out.println("4 - Exit");
         System.out.println("----------");
-        byte choice = scanner.nextByte();
+        byte choice = Byte.parseByte(scanner.nextLine());
         System.out.println("----------");
 
         switch (choice) {
@@ -62,7 +61,7 @@ public class Main {
                 createStockMenu();
                 break;
             case 2:
-                //removeStockMenu();
+                deleteStockMenu();
                 break;
             case 3:
                 //editStockMenu();
@@ -85,7 +84,7 @@ public class Main {
         System.out.println("4 - Sports Shorts");
         System.out.println("5 - Gifts");
         System.out.println("6 - Exit to Main Menu.");
-        byte choice = scanner.nextByte();
+        byte choice = Byte.parseByte(scanner.nextLine());
         switch(choice) {
             case 1:
                 createFootballs();
@@ -112,6 +111,41 @@ public class Main {
         }
     }
 
+    private void deleteStockMenu() {
+        System.out.println("----------");
+        System.out.println("Please select the type of stock you wish to delete.");
+        System.out.println("1 - Footballs");
+        System.out.println("2 - Footwear");
+        System.out.println("3 - Sports Tops");
+        System.out.println("4 - Sports Shorts");
+        System.out.println("5 - Gifts");
+        System.out.println("6 - Exit to Main Menu.");
+        byte choice = Byte.parseByte(scanner.nextLine());
+        switch(choice){
+            case 1:
+                createFootballs();
+                break;
+            case 2:
+                createFootwear();
+                break;
+            case 3:
+                createTops();
+                break;
+            case 4:
+                createShorts();
+                break;
+            case 5:
+                createGifts();
+                break;
+            case 6:
+                adminMenu();
+                break;
+            default:
+                System.out.println("Invalid choice, please try again");
+                System.out.println("--------");
+                createStockMenu();
+        }
+    }
 
     private void viewStockMenu() {
         System.out.println("Please choose one of the options below to view our current stock");
@@ -122,10 +156,10 @@ public class Main {
         System.out.println("5 - Gifts");
         System.out.println("6 - Exit");
         System.out.println("----------");
-        byte choice = scanner.nextByte();
+        byte choice = Byte.parseByte(scanner.nextLine());
         System.out.println("----------");
 
-        switch (choice) {
+        switch(choice) {
             case 1:
                 System.out.println("Please see the following footballs");
                 for(int i = 0; i < fbls.size(); i++) {
@@ -198,18 +232,18 @@ public class Main {
         gifts.add(new Gifts(20, "Sports Direct", "Manchester United", "Calendar", 9.99, 13));
     }
 
-    public void createFootballs() {
+    private void createFootballs() {
         System.out.println("-------");
         System.out.println("What is the product number for the football?");
-        int productNum = scanner.nextInt();
+        int productNum = Integer.parseInt(scanner.nextLine());
         System.out.println("What is the name of the manufacturer?");
         String manufacturer = scanner.nextLine();
         System.out.println("What brand is the item?");
         String brand = scanner.nextLine();
         System.out.println("What is the item's price?");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("How many do we have in stock?");
-        int stockNum = scanner.nextInt();
+        int stockNum = Integer.parseInt(scanner.nextLine());
 
         fbls.add(new Footballs(productNum, manufacturer, brand, price, stockNum));
 
@@ -223,15 +257,15 @@ public class Main {
     private void createFootwear() {
         System.out.println("-------");
         System.out.println("What is the product number for the footwear?");
-        int productNum = scanner.nextInt();
+        int productNum = Integer.parseInt(scanner.nextLine());
         System.out.println("What is the name of the manufacturer?");
         String manufacturer = scanner.nextLine();
         System.out.println("What brand is the item?");
         String brand = scanner.nextLine();
         System.out.println("What is the item's price?");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("How many do we have in stock?");
-        int stockNum = scanner.nextInt();
+        int stockNum = Integer.parseInt(scanner.nextLine());
 
         ftwr.add(new Footwear(productNum, manufacturer, brand, price, stockNum));
 
@@ -245,17 +279,18 @@ public class Main {
     private void createShorts() {
         System.out.println("-------");
         System.out.println("What is the product number for the shorts?");
-        int productNum = scanner.nextInt();
+        int productNum = Integer.parseInt(scanner.nextLine());
         System.out.println("What is the name of the manufacturer?");
         String manufacturer = scanner.nextLine();
         System.out.println("What brand is the item?");
         String brand = scanner.nextLine();
         System.out.println("What is the item's price?");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("How many do we have in stock?");
-        int stockNum = scanner.nextInt();
+        int stockNum = Integer.parseInt(scanner.nextLine());
 
         shorts.add(new Shorts(productNum, manufacturer, brand, price, stockNum));
+
 
         System.out.println("-------");
         System.out.println("New stock added. Returning to menu.");
@@ -267,7 +302,7 @@ public class Main {
     private void createTops() {
         System.out.println("-------");
         System.out.println("What is the product number for the tops?");
-        int productNum = scanner.nextInt();
+        int productNum = Integer.parseInt(scanner.nextLine());
         System.out.println("What is the name of the manufacturer?");
         String manufacturer = scanner.nextLine();
         System.out.println("What brand is the item?");
@@ -275,9 +310,9 @@ public class Main {
         System.out.println("Does the item has short sleeves? (y/n)");
         boolean isShortSleeve = scanner.nextLine().equalsIgnoreCase("y");
         System.out.println("What is the item's price?");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("How many do we have in stock?");
-        int stockNum = scanner.nextInt();
+        int stockNum = Integer.parseInt(scanner.nextLine());
 
         tops.add(new Tops(productNum, manufacturer, brand, isShortSleeve, price, stockNum));
 
@@ -291,17 +326,17 @@ public class Main {
     private void createGifts() {
         System.out.println("-------");
         System.out.println("What is the product number for the gifts?");
-        int productNum = scanner.nextInt();
+        int productNum = Integer.parseInt(scanner.nextLine());
         System.out.println("What is the name of the manufacturer?");
         String manufacturer = scanner.nextLine();
         System.out.println("What brand is the item?");
         String brand = scanner.nextLine();
         System.out.println("What sort of item is it?");
-        String type = scanner.nextLine();
+        String type = new Scanner(System.in).nextLine();
         System.out.println("What is the item's price?");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("How many do we have in stock?");
-        int stockNum = scanner.nextInt();
+        int stockNum = Integer.parseInt(scanner.nextLine());
 
         gifts.add(new Gifts(productNum, manufacturer, brand, type, price, stockNum));
 
