@@ -144,9 +144,46 @@ public class Main {
             default:
                 System.out.println("Invalid choice, please try again");
                 System.out.println("--------");
-                createStockMenu();
+                deleteStockMenu();
         }
     }
+
+    private void editStockMenu() {
+        System.out.println("----------");
+        System.out.println("Please select the type of stock you wish to edit.");
+        System.out.println("1 - Footballs");
+        System.out.println("2 - Footwear");
+        System.out.println("3 - Sports Tops");
+        System.out.println("4 - Sports Shorts");
+        System.out.println("5 - Gifts");
+        System.out.println("6 - Exit to Main Menu.");
+        byte choice = Byte.parseByte(scanner.nextLine());
+        switch (choice) {
+            case 1:
+                editFootballs();
+                break;
+            case 2:
+                editFootwear();
+                break;
+            case 3:
+                editTops();
+                break;
+            case 4:
+                editShorts();
+                break;
+            case 5:
+                editGifts();
+                break;
+            case 6:
+                adminMenu();
+                break;
+            default:
+                System.out.println("Invalid choice, please try again");
+                System.out.println("--------");
+                editStockMenu();
+        }
+    }
+
 
 
     private void viewStockMenu() {
@@ -435,4 +472,29 @@ public class Main {
         deleteGifts();
     }
 
+    private void editShorts() {
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to edit.");
+        int editChoice = Integer.parseInt(scanner.nextLine());
+    }
+    private void editGifts() {
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to edit.");
+        int editChoice = Integer.parseInt(scanner.nextLine());
+    }
+    private void editFootballs() {
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to edit.");
+        int editChoice = Integer.parseInt(scanner.nextLine());
+    }
+    private void editFootwear() {
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to edit.");
+        int editChoice = Integer.parseInt(scanner.nextLine());
+    }
+    private void editTops() {
+        System.out.println("-------");
+        System.out.println("Please enter the product number of the item you wish to edit.");
+        int editChoice = Integer.parseInt(scanner.nextLine());
+    }
 }
