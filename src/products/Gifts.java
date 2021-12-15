@@ -15,7 +15,15 @@ public class Gifts extends Products{
         System.out.println("Product Type = " + type);
         System.out.println("Manufacturer = " + manufacturer);
         System.out.println("Brand = " + brand);
-        System.out.println("Price = " + price);
+        System.out.println("Price = £" + price);
         System.out.println("Number in Stock = " + stockNum);
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

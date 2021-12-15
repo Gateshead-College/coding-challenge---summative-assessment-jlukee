@@ -20,7 +20,7 @@ public class Tops extends Products{
         else{
             System.out.println("The tops are long sleeve.");
         }
-        System.out.println("Price = " + price);
+        System.out.println("Price = £" + price);
         System.out.println("Number in Stock = " + stockNum);
         System.out.println("------");
     }

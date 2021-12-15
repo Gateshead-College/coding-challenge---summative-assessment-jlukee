@@ -11,7 +11,7 @@ public class Shorts extends Products{
         System.out.println("Product Number = " + productNum);
         System.out.println("Manufacturer = " + manufacturer);
         System.out.println("Brand = " + brand);
-        System.out.println("Price = " + price);
+        System.out.println("Price = £" + price);
         System.out.println("Number in Stock = " + stockNum);
         System.out.println("------");
     }
