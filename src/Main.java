@@ -51,7 +51,7 @@ public class Main {
         System.out.println("Please choose one of the options below to alter our current stock:");
         System.out.println("1 - Add New Stock");
         System.out.println("2 - Remove Existing Stock");
-        System.out.println("3 - Edit Existing Stock");
+        System.out.println("3 - Edit Existing Stock Levels");
         System.out.println("4 - Exit");
         System.out.println("----------");
         byte choice = Byte.parseByte(scanner.nextLine());
@@ -65,7 +65,7 @@ public class Main {
                 deleteStockMenu();
                 break;
             case 3:
-                //editStockMenu();
+                editStockMenu();
                 break;
             case 4:
                 System.out.println("Goodbye");
@@ -403,9 +403,11 @@ public class Main {
             System.out.println("Item Deleted");
             adminMenu();
         }
+        else{
         System.out.println("---------");
         System.out.println("Please try again.");
-        deleteFootballs();
+        editStockMenu();
+        }
     }
     private void deleteFootwear(){
         System.out.println("-------");
@@ -419,9 +421,10 @@ public class Main {
             System.out.println("Item Deleted");
             adminMenu();
         }
+        else {
         System.out.println("---------");
         System.out.println("Please try again.");
-        deleteFootwear();
+        editStockMenu();}
     }
     private void deleteShorts(){
         System.out.println("-------");
@@ -435,9 +438,10 @@ public class Main {
             System.out.println("Item Deleted");
             adminMenu();
         }
+        else{
         System.out.println("---------");
         System.out.println("Please try again.");
-        deleteShorts();
+        editStockMenu();}
     }
     private void deleteTops(){
         System.out.println("-------");
@@ -451,9 +455,10 @@ public class Main {
             System.out.println("Item Deleted");
             adminMenu();
         }
+        else{
         System.out.println("---------");
         System.out.println("Please try again.");
-        deleteTops();
+        editStockMenu();}
     }
     private void deleteGifts(){
         System.out.println("-------");
@@ -467,34 +472,119 @@ public class Main {
             System.out.println("Item Deleted");
             adminMenu();
         }
+        else{
         System.out.println("---------");
         System.out.println("Please try again.");
-        deleteGifts();
+        editStockMenu();}
     }
 
     private void editShorts() {
         System.out.println("-------");
         System.out.println("Please enter the product number of the item you wish to edit.");
         int editChoice = Integer.parseInt(scanner.nextLine());
+        shorts.get(editChoice-1).shortsDesc();
+        System.out.println("Please confirm that you wish to edit this item: (y/n)");
+        boolean edit = scanner.nextLine().equalsIgnoreCase("y");
+        if (edit){
+            System.out.println("Please enter the new stock amount for this item");
+            int newStockNum = Integer.parseInt(scanner.nextLine());
+            shorts.get(editChoice-1).setStockNum(newStockNum);
+            shorts.get(editChoice-1).shortsDesc();
+            System.out.println("--------");
+            System.out.println("Stock changed, returning to main menu");
+            adminMenu();
+        }
+        else{
+        System.out.println("---------");
+        System.out.println("Please try again.");
+        editStockMenu();}
     }
+
     private void editGifts() {
         System.out.println("-------");
         System.out.println("Please enter the product number of the item you wish to edit.");
         int editChoice = Integer.parseInt(scanner.nextLine());
+        gifts.get(editChoice-1).giftDesc();
+        System.out.println("Please confirm that you wish to edit this item: (y/n)");
+        boolean edit = scanner.nextLine().equalsIgnoreCase("y");
+        if (edit){
+            System.out.println("Please enter the new stock amount for this item");
+            int newStockNum = Integer.parseInt(scanner.nextLine());
+            gifts.get(editChoice-1).setStockNum(newStockNum);
+            gifts.get(editChoice-1).giftDesc();
+            System.out.println("--------");
+            System.out.println("Stock changed, returning to main menu");
+            adminMenu();
+        }
+        else{
+            System.out.println("---------");
+            System.out.println("Please try again.");
+            editStockMenu();}
     }
+
     private void editFootballs() {
         System.out.println("-------");
         System.out.println("Please enter the product number of the item you wish to edit.");
         int editChoice = Integer.parseInt(scanner.nextLine());
+        fbls.get(editChoice-1).footballDesc();
+        System.out.println("Please confirm that you wish to edit this item: (y/n)");
+        boolean edit = scanner.nextLine().equalsIgnoreCase("y");
+        if (edit){
+            System.out.println("Please enter the new stock amount for this item");
+            int newStockNum = Integer.parseInt(scanner.nextLine());
+            fbls.get(editChoice-1).setStockNum(newStockNum);
+            fbls.get(editChoice-1).footballDesc();
+            System.out.println("--------");
+            System.out.println("Stock changed, returning to main menu");
+            adminMenu();
+        }
+        else{
+            System.out.println("---------");
+            System.out.println("Please try again.");
+            editStockMenu();}
     }
+
     private void editFootwear() {
         System.out.println("-------");
         System.out.println("Please enter the product number of the item you wish to edit.");
         int editChoice = Integer.parseInt(scanner.nextLine());
+        ftwr.get(editChoice-1).footwearDesc();
+        System.out.println("Please confirm that you wish to edit this item: (y/n)");
+        boolean edit = scanner.nextLine().equalsIgnoreCase("y");
+        if (edit){
+            System.out.println("Please enter the new stock amount for this item");
+            int newStockNum = Integer.parseInt(scanner.nextLine());
+            ftwr.get(editChoice-1).setStockNum(newStockNum);
+            ftwr.get(editChoice-1).footwearDesc();
+            System.out.println("--------");
+            System.out.println("Stock changed, returning to main menu");
+            adminMenu();
+        }
+        else{
+            System.out.println("---------");
+            System.out.println("Please try again.");
+            editStockMenu();}
     }
+
     private void editTops() {
         System.out.println("-------");
         System.out.println("Please enter the product number of the item you wish to edit.");
         int editChoice = Integer.parseInt(scanner.nextLine());
+        tops.get(editChoice-1).topsDesc();
+        System.out.println("Please confirm that you wish to edit this item: (y/n)");
+        boolean edit = scanner.nextLine().equalsIgnoreCase("y");
+        if (edit){
+            System.out.println("Please enter the new stock amount for this item");
+            int newStockNum = Integer.parseInt(scanner.nextLine());
+            tops.get(editChoice-1).setStockNum(newStockNum);
+            tops.get(editChoice-1).topsDesc();
+            System.out.println("--------");
+            System.out.println("Stock changed, returning to main menu");
+            adminMenu();
+        }
+        else{
+            System.out.println("---------");
+            System.out.println("Please try again.");
+            editStockMenu();}
     }
 }

@@ -15,4 +15,20 @@ public class Footwear extends Products{
         System.out.println("Number in Stock = " + stockNum);
         System.out.println("------");
     }
+
+    @Override
+    public int getProductNum() {
+        return super.getProductNum();
+    }
+
+
+    @Override
+    public int getStockNum() {
+        return super.getStockNum();
+    }
+
+    @Override
+    public void setStockNum(int stockNum) {
+        super.setStockNum(stockNum);
+    }
 }

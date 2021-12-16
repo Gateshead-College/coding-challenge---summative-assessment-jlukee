@@ -19,11 +19,20 @@ public class Gifts extends Products{
         System.out.println("Number in Stock = " + stockNum);
     }
 
-    public String getType() {
-        return type;
+    @Override
+    public int getProductNum() {
+        return super.getProductNum();
     }
 
-    public void setType(String type) {
-        this.type = type;
+
+    @Override
+    public int getStockNum() {
+        return super.getStockNum();
     }
+
+    @Override
+    public void setStockNum(int stockNum) {
+        super.setStockNum(stockNum);
+    }
+
 }
